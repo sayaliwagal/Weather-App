@@ -1,16 +1,105 @@
-# React + Vite
+Weather App 🌤️
+1. Project Description
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a responsive, single-page Weather App built with React that allows users to search for any city and view current weather conditions as well as a 5-day forecast. It fetches weather data from the OpenWeatherMap API and provides a clean, user-friendly interface.
+🌐 Live Demo
 
-Currently, two official plugins are available:
+🔗https://weather-app-gold-theta-51.vercel.app/
+Core Features:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Search for any city and get current weather.
 
-## React Compiler
+View temperature, humidity, pressure, wind speed, and "feels like" information.
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+5-day forecast with daily weather conditions.
 
-## Expanding the ESLint configuration
+Loading indicators while fetching data.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Error handling for invalid or non-existing cities.
+
+Saves the last searched city in localStorage to load automatically on refresh.
+
+State management using React Context API for cleaner code and global access to weather data.
+
+Responsive UI suitable for mobile and desktop screens.
+
+2. Setup and Run Locally
+Prerequisites
+
+Node.js v16+ installed
+
+npm or yarn
+
+Steps
+
+Clone the repository
+
+git clone https://github.com/sayaliwagal/Weather-App
+cd Weather-App
+
+
+Install dependencies
+
+npm install
+# or
+yarn install
+
+
+Set up environment variables
+
+Create a .env file in the root directory.
+
+Add your OpenWeatherMap API key:
+
+VITE_WEATHER_API_KEY=your_api_key_here
+
+
+Run the development server
+
+npm run dev
+# or
+yarn dev
+
+
+Open the app in your browser at http://localhost:5173.
+
+3. Running Test Cases
+Note: This app currently does not include automated test cases.
+
+To manually test the application:
+
+Run the development server (npm run dev or yarn dev).
+
+Search for a city and ensure that:
+
+Current weather data is displayed correctly.
+
+Forecast data shows 5 days.
+
+Loading spinner appears while fetching data.
+
+Errors display when entering an invalid city.
+
+Refresh the page and verify that the last searched city is loaded automatically from localStorage.
+
+4. Assumptions & Design Choices
+
+State Management: Used React Context API instead of prop drilling for cleaner code and better scalability.
+
+LocalStorage: Stores the last searched city to automatically display it on page refresh.
+
+Custom Hooks: useCallApi used to fetch both current weather and forecast data.
+
+Forecast Display: Shows one data entry per day (around 12:00) for clarity.
+
+Responsive Design: Tailwind CSS is used for responsive layouts and components.
+
+Icons: OpenWeatherMap icons are used for weather conditions; custom icons are used for metrics like humidity, wind speed, and pressure.
+
+Loading & Error States: Loading spinner and error messages enhance user experience during API calls.
+
+5. Feature Enhancements
+
+Hourly Forecast & Dynamic Backgrounds: Add an hourly weather view and change the app’s background based on current weather conditions for better user experience.
+
+Automated Test Cases: Implement unit and integration tests (using Jest and React Testing Library) to ensure components, API calls, and state management work correctly.
